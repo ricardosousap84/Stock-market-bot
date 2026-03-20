@@ -1,0 +1,14 @@
+name: Execução Diária do Bot
+
+on:
+  schedule:
+    - cron: '30 8 * * 1-5'  # Executa para bolsas Europeias (UTC)
+    - cron: '30 14 * * 1-5' # Executa para bolsas Americanas (UTC)
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run daily bot execution
+        run: echo "Bot execution scheduled"
