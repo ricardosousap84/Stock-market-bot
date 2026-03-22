@@ -1,0 +1,11 @@
+import yfinance as yf
+
+# Example with a PSI20 company (EDP) and a NASDAQ company (AAPL)
+tickers = ['EDP', 'AAPL']  # Add the tickers here
+
+# 'period=1d' and 'interval=1h' capture 1-hour blocks of the current session
+data = yf.download(tickers, period="1d", interval="1h")
+
+# To see the first hour of trading (usually the first line of the DataFrame)
+primeira_hora = data.iloc[0]
+print(primeira_hora
